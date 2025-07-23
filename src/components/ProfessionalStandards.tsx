@@ -84,7 +84,7 @@ const ProfessionalStandards = () => {
             Все сертификаты и дипломы доступны для ознакомления
           </p>
           <a 
-            href="#certificates" 
+            href="/certificates" 
             className="text-primary hover:text-primary/80 underline font-medium"
           >
             Посмотреть документы об образовании

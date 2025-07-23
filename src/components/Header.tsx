@@ -21,17 +21,17 @@ const Header = () => {
         </div>
         
         <nav className="hidden md:flex items-center space-x-6">
-          <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">
-            Обо мне
-          </a>
           <a href="#services" className="text-sm font-medium hover:text-primary transition-colors">
             Услуги
           </a>
-          <a href="#approach" className="text-sm font-medium hover:text-primary transition-colors">
-            Как работаю
+          <a href="#why-me" className="text-sm font-medium hover:text-primary transition-colors">
+            Почему ко мне
           </a>
-          <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">
-            Контакты
+          <a href="#work-with" className="text-sm font-medium hover:text-primary transition-colors">
+            С чем работаю
+          </a>
+          <a href="#certificates" className="text-sm font-medium hover:text-primary transition-colors">
+            Образование
           </a>
         </nav>
 

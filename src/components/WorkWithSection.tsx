@@ -18,11 +18,11 @@ const WorkWithSection = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-background">
+    <section id="work-with" className="py-20 px-4 bg-background">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-            С чем я работаю
+            С чем работаю
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Основные запросы, с которыми ко мне обращаются клиенты
@@ -54,7 +54,7 @@ const WorkWithSection = () => {
             size="lg"
             className="font-semibold"
           >
-            Обсудить мой запрос
+            Записаться на консультацию
           </Button>
         </div>
       </div>
