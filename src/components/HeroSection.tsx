@@ -1,16 +1,15 @@
 import { Button } from "@/components/ui/button";
 import psychologistPhoto from "@/assets/psychologist-photo.jpg";
-
 const HeroSection = () => {
   const scrollToBooking = () => {
     const bookingElement = document.getElementById('booking-form');
     if (bookingElement) {
-      bookingElement.scrollIntoView({ behavior: 'smooth' });
+      bookingElement.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section className="py-20 px-4 bg-gradient-warm">
+  return <section className="py-20 px-4 bg-gradient-warm">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
@@ -42,30 +41,23 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                onClick={scrollToBooking}
-                variant="therapy"
-                size="lg"
-                className="font-semibold"
-              >
+              <Button onClick={scrollToBooking} variant="therapy" size="lg" className="font-semibold">
                 Записаться на консультацию
               </Button>
-              <Button 
-                variant="outline"
-                size="lg"
-                onClick={() => {
-                  const aboutElement = document.getElementById('about');
-                  if (aboutElement) {
-                    aboutElement.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              >
+              <Button variant="outline" size="lg" onClick={() => {
+              const aboutElement = document.getElementById('about');
+              if (aboutElement) {
+                aboutElement.scrollIntoView({
+                  behavior: 'smooth'
+                });
+              }
+            }}>
                 Узнать больше
               </Button>
             </div>
 
             <div className="pt-6 space-y-2">
-              <div className="text-sm text-muted-foreground">
+              <div className="text-sm text-muted-foreground rounded-md">
                 <span className="font-medium text-primary">Первичная консультация:</span> 750₽ (45-55 мин)
               </div>
               <div className="text-sm text-muted-foreground">
@@ -78,17 +70,11 @@ const HeroSection = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-therapy rounded-3xl opacity-20 blur-lg"></div>
-              <img
-                src={psychologistPhoto}
-                alt="Елена Ромахина, психолог"
-                className="relative w-80 h-96 object-cover rounded-3xl shadow-therapy"
-              />
+              <img src={psychologistPhoto} alt="Елена Ромахина, психолог" className="relative w-80 h-96 object-cover rounded-3xl shadow-therapy" />
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
