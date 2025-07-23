@@ -18,6 +18,12 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'nunito': ['Nunito', 'sans-serif'],
+				'open-sans': ['Open Sans', 'sans-serif'],
+				'sans': ['Open Sans', 'system-ui', 'sans-serif'],
+				'heading': ['Nunito', 'system-ui', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +67,20 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				therapy: {
+					purple: 'hsl(var(--therapy-purple))',
+					green: 'hsl(var(--therapy-green))',
+					beige: 'hsl(var(--therapy-beige))'
 				}
+			},
+			backgroundImage: {
+				'gradient-therapy': 'var(--gradient-therapy)',
+				'gradient-warm': 'var(--gradient-warm)'
+			},
+			boxShadow: {
+				'therapy': 'var(--shadow-therapy)',
+				'gentle': 'var(--shadow-gentle)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
