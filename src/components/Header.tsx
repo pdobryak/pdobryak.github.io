@@ -30,7 +30,7 @@ const Header = () => {
           <a href="#work-with" className="text-sm font-medium hover:text-primary transition-colors">
             С чем работаю
           </a>
-          <a href="#certificates" className="text-sm font-medium hover:text-primary transition-colors">
+          <a href="https://preview--zenith-path-guide.lovable.app/certificates" className="text-sm font-medium hover:text-primary transition-colors">
             Образование
           </a>
           <a href="/blog" className="text-sm font-medium hover:text-primary transition-colors">
