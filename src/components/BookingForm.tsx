@@ -201,7 +201,7 @@ const BookingForm = () => {
 
           <p className="text-xs text-muted-foreground text-center">
             Нажимая кнопку, вы соглашаетесь с{" "}
-            <a href="#privacy" className="text-primary hover:underline">
+            <a href="https://1d216603-515c-4e5c-8631-78476b658f7b.lovableproject.com/privacy" className="text-primary hover:underline">
               политикой конфиденциальности
             </a>
           </p>
