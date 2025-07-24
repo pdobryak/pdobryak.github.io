@@ -27,7 +27,7 @@ const Footer = () => {
                 <span>lena.romakhina@gmail.com</span>
               </a>
               <a 
-                href="https://t.me/elena_romakhina" 
+                href="https://t.me/romabulochka" 
                 className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -64,7 +64,7 @@ const Footer = () => {
                 Заполнить форму
               </Button>
               <p className="text-sm text-muted-foreground">
-                Или напишите напрямую в Telegram
+                Или напишите напрямую в <a href="https://t.me/romabulochka" className="text-primary hover:underline">Telegram</a>
               </p>
             </div>
           </div>

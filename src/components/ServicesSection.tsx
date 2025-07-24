@@ -17,7 +17,7 @@ const ServicesSection = () => {
       title: "Индивидуальная консультация",
       duration: "50-60 мин", 
       price: "1500₽",
-      description: "Глубокая работа с вашим запросом",
+      description: "Глубокая работа с вашим запросом, реальные инструменты",
       featured: false
     }
   ];
@@ -72,7 +72,7 @@ const ServicesSection = () => {
                 
                 <Button 
                   onClick={scrollToBooking}
-                  variant={service.featured ? "therapy" : "default"}
+                  variant="therapy"
                   className="w-full"
                 >
                   Записаться

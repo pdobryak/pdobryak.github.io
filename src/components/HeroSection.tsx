@@ -38,32 +38,26 @@ const HeroSection = () => {
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
                 <span className="text-foreground">Полная конфиденциальность</span>
               </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                <span className="text-foreground">Занимаюсь психологией больше 3-х лет</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <span className="text-foreground">Стабильно посещаю групповую супервизию</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                <span className="text-foreground">Отношусь к делу с любовью и уважением</span>
+              </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button onClick={scrollToBooking} variant="therapy" size="lg" className="font-semibold">
                 Записаться на консультацию
               </Button>
-              <Button variant="outline" size="lg" onClick={() => {
-              const aboutElement = document.getElementById('about');
-              if (aboutElement) {
-                aboutElement.scrollIntoView({
-                  behavior: 'smooth'
-                });
-              }
-            }}>
-                Узнать больше
-              </Button>
             </div>
 
-            <div className="pt-6 space-y-2">
-              <div className="text-sm text-muted-foreground rounded-md">
-                <span className="font-medium text-primary">Первичная консультация:</span> 750₽ (45-55 мин)
-              </div>
-              <div className="text-sm text-muted-foreground">
-                <span className="font-medium text-primary">Индивидуальная сессия:</span> 1500₽ (50-60 мин)
-              </div>
-            </div>
           </div>
 
           {/* Photo */}

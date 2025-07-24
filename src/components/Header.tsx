@@ -33,6 +33,9 @@ const Header = () => {
           <a href="#certificates" className="text-sm font-medium hover:text-primary transition-colors">
             Образование
           </a>
+          <a href="/blog" className="text-sm font-medium hover:text-primary transition-colors">
+            Блог
+          </a>
         </nav>
 
         <Button 
