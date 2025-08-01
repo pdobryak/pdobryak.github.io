@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   Drawer,
   DrawerContent,
@@ -11,11 +12,33 @@ import {
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavigation = (href: string) => {
+    if (href.startsWith('#')) {
+      if (location.pathname !== '/') {
+        navigate('/' + href);
+      } else {
+        const element = document.getElementById(href.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    } else {
+      navigate(href);
+    }
+    setIsMobileMenuOpen(false);
+  };
 
   const scrollToBooking = () => {
-    const bookingElement = document.getElementById('booking-form');
-    if (bookingElement) {
-      bookingElement.scrollIntoView({ behavior: 'smooth' });
+    if (location.pathname !== '/') {
+      navigate('/#booking-form');
+    } else {
+      const bookingElement = document.getElementById('booking-form');
+      if (bookingElement) {
+        bookingElement.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     setIsMobileMenuOpen(false);
   };
@@ -24,7 +47,7 @@ const Header = () => {
     { href: "#services", label: "Услуги" },
     { href: "#why-me", label: "Почему ко мне" },
     { href: "#work-with", label: "С чем работаю" },
-    { href: "https://preview--zenith-path-guide.lovable.app/certificates", label: "Образование" },
+    { href: "/certificates", label: "Образование" },
     { href: "/blog", label: "Блог" },
   ];
 
@@ -45,13 +68,13 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           {menuItems.map((item) => (
-            <a 
+            <button 
               key={item.href}
-              href={item.href} 
+              onClick={() => handleNavigation(item.href)}
               className="text-sm font-medium hover:text-primary transition-colors"
             >
               {item.label}
-            </a>
+            </button>
           ))}
         </nav>
 
@@ -81,14 +104,13 @@ const Header = () => {
             <div className="px-4 pb-6">
               <nav className="flex flex-col space-y-4">
                 {menuItems.map((item) => (
-                  <a
+                  <button
                     key={item.href}
-                    href={item.href}
-                    className="text-lg font-medium hover:text-primary transition-colors py-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={() => handleNavigation(item.href)}
+                    className="text-lg font-medium hover:text-primary transition-colors py-2 text-left"
                   >
                     {item.label}
-                  </a>
+                  </button>
                 ))}
                 <Button 
                   onClick={scrollToBooking}
