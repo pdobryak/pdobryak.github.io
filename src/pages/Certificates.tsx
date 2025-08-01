@@ -2,8 +2,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, GraduationCap } from "lucide-react";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { ArrowLeft, GraduationCap, Eye } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import certificateAct from "@/assets/certificate-act.jpg";
 import certificateCbt from "@/assets/certificate-cbt.jpg";
 import diploma from "@/assets/diploma.jpg";
@@ -14,22 +16,43 @@ const Certificates = () => {
   const certificates = [
     {
       title: "Диплом о профессиональной переподготовке",
-      subtitle: "Практический психолог и психолог-консультант",
-      description: "1610 часов обучения в Институте прикладной психологии в социальной сфере",
+      subtitle: "Консультативная психология; эффективные стратегии практической психологической помощи",
+      description: "1610 часов обучения в АНО ДПО «Институт прикладной психологии в социальной сфере»",
+      details: [
+        "Практический психолог и дополнительной квалификации психолог-консультант",
+        "Регистрационный номер: 978",
+        "Дата выдачи: 20.03.2023",
+        "Город: Москва"
+      ],
+      registrationNumber: "772419119714",
       image: diploma,
       year: "2023"
     },
     {
       title: "Удостоверение о повышении квалификации",
-      subtitle: "ACT-терапия (Терапия принятия и ответственности)",
-      description: "200 часов обучения как метод развития психологической гибкости клиента",
+      subtitle: "Терапия принятия и ответственности (ACT-терапия) как метод развития психологической гибкости клиента",
+      description: "200 часов обучения в ООО «НЦРДО» (Национальный центральный институт развития дополнительного образования)",
+      details: [
+        "Лицензия № Л035-01298-77/00180383",
+        "Регистрационный номер: 2798-у",
+        "Дата выдачи: 21 декабря 2023 года",
+        "Город: Москва"
+      ],
+      registrationNumber: "772420159090",
       image: certificateAct,
       year: "2023"
     },
     {
       title: "Удостоверение о повышении квалификации", 
       subtitle: "Современная когнитивно-поведенческая психотерапия",
-      description: "144 академических часа в Институте психотерапии и медицинской психологии",
+      description: "144 академических часа в Институте психотерапии и медицинской психологии им. Б.Д. Карвасарского",
+      details: [
+        "Регистрационный номер: С23-2322",
+        "Дата выдачи: 18.06.2023",
+        "Город: Санкт-Петербург",
+        "Базовые лицензии № 0098 Комитета по образованию Санкт-Петербурга"
+      ],
+      registrationNumber: "782700327004",
       image: certificateCbt,
       year: "2023"
     }
@@ -67,31 +90,93 @@ const Certificates = () => {
           {certificates.map((cert, index) => (
             <Card key={index} className="shadow-gentle hover:shadow-therapy transition-all duration-300 border-0">
               <CardContent className="p-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                  <div className="space-y-4">
-                    <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                      {cert.year}
-                    </div>
-                    <h2 className="text-2xl font-heading font-bold text-foreground">
-                      {cert.title}
-                    </h2>
-                    <h3 className="text-lg font-medium text-primary">
-                      {cert.subtitle}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {cert.description}
-                    </p>
-                  </div>
-                  
-                  <div className="flex justify-center">
-                    <img 
-                      src={cert.image} 
-                      alt={cert.title}
-                      className="max-w-full h-auto rounded-lg shadow-gentle border border-border hover:shadow-therapy transition-all duration-300"
-                      style={{ maxHeight: '400px' }}
-                    />
-                  </div>
-                </div>
+                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                   <div className="space-y-6">
+                     <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                       {cert.year}
+                     </div>
+                     <h2 className="text-2xl font-heading font-bold text-foreground">
+                       {cert.title}
+                     </h2>
+                     <h3 className="text-lg font-medium text-primary">
+                       {cert.subtitle}
+                     </h3>
+                     <p className="text-muted-foreground leading-relaxed">
+                       {cert.description}
+                     </p>
+                     
+                     <div className="space-y-2">
+                       <h4 className="font-semibold text-foreground">Детали документа:</h4>
+                       <ul className="space-y-1">
+                         {cert.details.map((detail, idx) => (
+                           <li key={idx} className="text-sm text-muted-foreground flex items-start">
+                             <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                             {detail}
+                           </li>
+                         ))}
+                       </ul>
+                     </div>
+                     
+                     <div className="bg-muted/30 p-4 rounded-lg">
+                       <p className="text-sm text-muted-foreground">
+                         <strong>Номер документа:</strong> {cert.registrationNumber}
+                       </p>
+                     </div>
+                   </div>
+                   
+                   <div className="flex flex-col items-center space-y-4">
+                     <div className="relative group">
+                       <img 
+                         src={cert.image} 
+                         alt={cert.title}
+                         className="max-w-full h-auto rounded-lg shadow-gentle border border-border transition-all duration-300"
+                         style={{ maxHeight: '400px' }}
+                       />
+                       <Dialog>
+                         <DialogTrigger asChild>
+                           <Button
+                             variant="secondary"
+                             size="sm"
+                             className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                           >
+                             <Eye className="w-4 h-4 mr-2" />
+                             Увеличить
+                           </Button>
+                         </DialogTrigger>
+                         <DialogContent className="max-w-4xl max-h-[90vh] p-0">
+                           <div className="relative">
+                             <img 
+                               src={cert.image} 
+                               alt={cert.title}
+                               className="w-full h-auto rounded-lg"
+                             />
+                           </div>
+                         </DialogContent>
+                       </Dialog>
+                     </div>
+                     <Button
+                       variant="outline"
+                       size="sm"
+                       asChild
+                     >
+                       <Dialog>
+                         <DialogTrigger>
+                           <Eye className="w-4 h-4 mr-2" />
+                           Просмотреть в полном размере
+                         </DialogTrigger>
+                         <DialogContent className="max-w-4xl max-h-[90vh] p-0">
+                           <div className="relative">
+                             <img 
+                               src={cert.image} 
+                               alt={cert.title}
+                               className="w-full h-auto rounded-lg"
+                             />
+                           </div>
+                         </DialogContent>
+                       </Dialog>
+                     </Button>
+                   </div>
+                 </div>
               </CardContent>
             </Card>
           ))}
