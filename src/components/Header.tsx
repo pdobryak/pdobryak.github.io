@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -48,7 +47,8 @@ const Header = () => {
     { href: "#services", label: "Услуги" },
     { href: "#why-me", label: "Почему ко мне" },
     { href: "#work-with", label: "С чем работаю" },
-    { href: "#education", label: "Образование" },
+    { href: "/certificates", label: "Образование" },
+    { href: "/blog", label: "Блог" },
   ];
 
   return (
