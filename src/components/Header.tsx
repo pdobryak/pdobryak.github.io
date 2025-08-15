@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -47,8 +48,7 @@ const Header = () => {
     { href: "#services", label: "Услуги" },
     { href: "#why-me", label: "Почему ко мне" },
     { href: "#work-with", label: "С чем работаю" },
-    { href: "/certificates", label: "Образование" },
-    { href: "/blog", label: "Блог" },
+    { href: "#education", label: "Образование" },
   ];
 
   return (
@@ -95,7 +95,7 @@ const Header = () => {
               className="md:hidden"
             >
               <Menu className="h-4 w-4" />
-            </Button>
+            </DrawerTrigger>
           </DrawerTrigger>
           <DrawerContent>
             <DrawerHeader>

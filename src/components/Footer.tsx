@@ -1,3 +1,4 @@
+
 import { Mail, MessageCircle, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -83,10 +84,16 @@ const Footer = () => {
                 Политика конфиденциальности
               </a>
               <a 
+                href="/blog" 
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                Блог
+              </a>
+              <a 
                 href="/certificates" 
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                Документы об образовании
+                Все документы
               </a>
             </div>
           </div>
