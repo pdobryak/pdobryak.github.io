@@ -95,7 +95,7 @@ const Header = () => {
               className="md:hidden"
             >
               <Menu className="h-4 w-4" />
-            </DrawerTrigger>
+            </Button>
           </DrawerTrigger>
           <DrawerContent>
             <DrawerHeader>
