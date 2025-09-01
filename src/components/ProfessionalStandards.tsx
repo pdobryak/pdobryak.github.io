@@ -81,14 +81,8 @@ const ProfessionalStandards = () => {
 
         <div className="mt-12 text-center">
           <p className="text-sm text-muted-foreground mb-4">
-            Все сертификаты и дипломы доступны для ознакомления
+            Все сертификаты и дипломы доступны для ознакомления в разделе "Образование"
           </p>
-          <a 
-            href="/certificates" 
-            className="text-primary hover:text-primary/80 underline font-medium"
-          >
-            Посмотреть документы об образовании
-          </a>
         </div>
       </div>
     </section>

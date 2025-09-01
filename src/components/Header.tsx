@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
   Drawer,
@@ -31,24 +31,11 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const scrollToBooking = () => {
-    if (location.pathname !== '/') {
-      navigate('/#booking-form');
-    } else {
-      const bookingElement = document.getElementById('booking-form');
-      if (bookingElement) {
-        bookingElement.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-    setIsMobileMenuOpen(false);
-  };
-
   const menuItems = [
     { href: "#services", label: "Услуги" },
     { href: "#why-me", label: "Почему ко мне" },
     { href: "#work-with", label: "С чем работаю" },
-    { href: "/certificates", label: "Образование" },
-    { href: "/blog", label: "Блог" },
+    { href: "#education", label: "Образование" },
   ];
 
   return (
@@ -79,12 +66,16 @@ const Header = () => {
         </nav>
 
         {/* Desktop CTA Button */}
-        <Button 
-          onClick={scrollToBooking}
-          className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+        <a 
+          href="https://t.me/romabulochka"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:flex"
         >
-          Записаться
-        </Button>
+          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium">
+            Записаться
+          </Button>
+        </a>
 
         {/* Mobile Menu */}
         <Drawer open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -112,12 +103,16 @@ const Header = () => {
                     {item.label}
                   </button>
                 ))}
-                <Button 
-                  onClick={scrollToBooking}
-                  className="mt-4 bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+                <a 
+                  href="https://t.me/romabulochka"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block mt-4"
                 >
-                  Записаться
-                </Button>
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium">
+                    Записаться
+                  </Button>
+                </a>
               </nav>
             </div>
           </DrawerContent>

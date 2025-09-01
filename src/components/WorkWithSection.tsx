@@ -13,13 +13,6 @@ const WorkWithSection = () => {
     "Чувство одиночества"
   ];
 
-  const scrollToBooking = () => {
-    const bookingElement = document.getElementById('booking-form');
-    if (bookingElement) {
-      bookingElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section id="work-with" className="py-20 px-4 bg-background">
       <div className="container mx-auto max-w-4xl">
@@ -51,14 +44,19 @@ const WorkWithSection = () => {
             Напишите мне — обсудим ваш случай индивидуально.
           </p>
           
-          <Button 
-            onClick={scrollToBooking}
-            variant="therapy"
-            size="lg"
-            className="font-semibold"
+          <a 
+            href="https://t.me/romabulochka"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
           >
-            Записаться на консультацию
-          </Button>
+            <Button 
+              variant="therapy"
+              size="lg"
+            >
+              Записаться на консультацию
+            </Button>
+          </a>
         </div>
       </div>
     </section>

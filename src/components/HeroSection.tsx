@@ -1,14 +1,7 @@
 import { Button } from "@/components/ui/button";
 import psychologistPhoto from "@/assets/psychologist-photo.jpg";
+
 const HeroSection = () => {
-  const scrollToBooking = () => {
-    const bookingElement = document.getElementById('booking-form');
-    if (bookingElement) {
-      bookingElement.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  };
   return <section className="py-20 px-4 bg-gradient-warm">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -53,9 +46,16 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button onClick={scrollToBooking} variant="therapy" size="lg" className="font-semibold">
-                Записаться на консультацию
-              </Button>
+              <a 
+                href="https://t.me/romabulochka"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Button variant="therapy" size="lg" className="font-semibold">
+                  Записаться на консультацию
+                </Button>
+              </a>
             </div>
 
           </div>

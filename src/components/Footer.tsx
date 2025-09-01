@@ -2,13 +2,6 @@ import { Mail, MessageCircle, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
-  const scrollToBooking = () => {
-    const bookingElement = document.getElementById('booking-form');
-    if (bookingElement) {
-      bookingElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <footer className="bg-secondary/5 border-t border-border">
       <div className="container mx-auto px-4 py-12">
@@ -57,15 +50,16 @@ const Footer = () => {
               Записаться на приём
             </h3>
             <div className="space-y-3">
-              <Button 
-                onClick={scrollToBooking}
-                className="w-full bg-primary hover:bg-primary/90"
+              <a 
+                href="https://t.me/romabulochka"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
               >
-                Заполнить форму
-              </Button>
-              <p className="text-sm text-muted-foreground">
-                Или напишите напрямую в <a href="https://t.me/romabulochka" className="text-primary hover:underline">Telegram</a>
-              </p>
+                <Button className="w-full bg-primary hover:bg-primary/90">
+                  Написать в Telegram
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -81,12 +75,6 @@ const Footer = () => {
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 Политика конфиденциальности
-              </a>
-              <a 
-                href="/certificates" 
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                Документы об образовании
               </a>
             </div>
           </div>

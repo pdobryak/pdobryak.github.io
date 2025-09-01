@@ -22,13 +22,6 @@ const ServicesSection = () => {
     }
   ];
 
-  const scrollToBooking = () => {
-    const bookingElement = document.getElementById('booking-form');
-    if (bookingElement) {
-      bookingElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section id="services" className="py-20 px-4 bg-background">
       <div className="container mx-auto max-w-4xl">
@@ -70,13 +63,19 @@ const ServicesSection = () => {
                   {service.description}
                 </p>
                 
-                <Button 
-                  onClick={scrollToBooking}
-                  variant="therapy"
-                  className="w-full"
+                <a 
+                  href="https://t.me/romabulochka"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full"
                 >
-                  Записаться
-                </Button>
+                  <Button 
+                    variant="therapy"
+                    className="w-full"
+                  >
+                    Записаться
+                  </Button>
+                </a>
               </CardContent>
             </Card>
           ))}
