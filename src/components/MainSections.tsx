@@ -2,11 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, MessageCircle, Shield, Lock, CheckCircle, GraduationCap, Users, Brain, Stethoscope, TrendingUp } from "lucide-react";
 import psychologistPhoto from "@/assets/psychologist-photo.jpg";
-
 const MainSections = () => {
   // Hero Section
-  const HeroSection = () => (
-    <section className="py-20 px-4 bg-gradient-warm">
+  const HeroSection = () => <section className="py-20 px-4 bg-gradient-warm">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
@@ -39,7 +37,7 @@ const MainSections = () => {
                 <span className="text-foreground">Занимаюсь психологией больше 3-х лет</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <div className="w-2 h-2 bg-primary rounded-full mx-0 my-0 py-0 px-[4px]"></div>
                 <span className="text-foreground">Имею диплом психолога и сейчас получаю магистерскую степень по клинической психологии.</span>
               </div>
               <div className="flex items-center space-x-3">
@@ -49,12 +47,7 @@ const MainSections = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a 
-                href="https://t.me/romabulochka"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block"
-              >
+              <a href="https://t.me/romabulochka" target="_blank" rel="noopener noreferrer" className="inline-block">
                 <Button variant="therapy" size="lg" className="font-semibold">
                   Записаться на консультацию
                 </Button>
@@ -70,32 +63,26 @@ const MainSections = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 
   // Services Section
   const ServicesSection = () => {
-    const services = [
-      {
-        icon: Heart,
-        title: "Первичная консультация",
-        duration: "45-55 мин",
-        price: "750₽",
-        description: "Специальная цена и продолжительность - потому что понимаю, как важно найти своего психолога",
-        featured: true
-      },
-      {
-        icon: MessageCircle,
-        title: "Индивидуальная консультация",
-        duration: "50-60 мин", 
-        price: "2000₽",
-        description: "Глубокая работа с вашим запросом, реальные инструменты",
-        featured: false
-      }
-    ];
-
-    return (
-      <section id="services" className="py-20 px-4 bg-background">
+    const services = [{
+      icon: Heart,
+      title: "Первичная консультация",
+      duration: "45-55 мин",
+      price: "750₽",
+      description: "Специальная цена и продолжительность - потому что понимаю, как важно найти своего психолога",
+      featured: true
+    }, {
+      icon: MessageCircle,
+      title: "Индивидуальная консультация",
+      duration: "50-60 мин",
+      price: "2000₽",
+      description: "Глубокая работа с вашим запросом, реальные инструменты",
+      featured: false
+    }];
+    return <section id="services" className="py-20 px-4 bg-background">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
@@ -107,13 +94,7 @@ const MainSections = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <Card 
-                key={index} 
-                className={`shadow-gentle hover:shadow-therapy transition-all duration-300 border-0 ${
-                  service.featured ? 'bg-gradient-warm' : 'bg-card'
-                }`}
-              >
+            {services.map((service, index) => <Card key={index} className={`shadow-gentle hover:shadow-therapy transition-all duration-300 border-0 ${service.featured ? 'bg-gradient-warm' : 'bg-card'}`}>
                 <CardContent className="p-8 text-center">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                     <service.icon className="w-8 h-8 text-primary" />
@@ -135,59 +116,34 @@ const MainSections = () => {
                     {service.description}
                   </p>
                   
-                  <a 
-                    href="https://t.me/romabulochka"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full"
-                  >
-                    <Button 
-                      variant="therapy"
-                      className="w-full"
-                    >
+                  <a href="https://t.me/romabulochka" target="_blank" rel="noopener noreferrer" className="block w-full">
+                    <Button variant="therapy" className="w-full">
                       Записаться
                     </Button>
                   </a>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
-      </section>
-    );
+      </section>;
   };
 
   // Why Me Section
   const WhyMeSection = () => {
-    const reasons = [
-      {
-        icon: Heart,
-        title: "Понимаю ваши сложности",
-        points: [
-          "Была на вашем месте - знаю, как это волнительно",
-          "150+ часов личной терапии - чтобы лучше помогать вам"
-        ]
-      },
-      {
-        icon: Shield,
-        title: "Профессионально",
-        points: [
-          "Работаю в научно доказанном подходе когнитивно-поведенческой терапии",
-          "Фокус на ваших реальных изменениях"
-        ]
-      },
-      {
-        icon: Lock,
-        title: "Безопасно",
-        points: [
-          "Строгая конфиденциальность",
-          "Чёткие профессиональные границы"
-        ]
-      }
-    ];
-
-    return (
-      <section id="why-me" className="py-20 px-4 bg-background">
+    const reasons = [{
+      icon: Heart,
+      title: "Понимаю ваши сложности",
+      points: ["Была на вашем месте - знаю, как это волнительно", "150+ часов личной терапии - чтобы лучше помогать вам"]
+    }, {
+      icon: Shield,
+      title: "Профессионально",
+      points: ["Работаю в научно доказанном подходе когнитивно-поведенческой терапии", "Фокус на ваших реальных изменениях"]
+    }, {
+      icon: Lock,
+      title: "Безопасно",
+      points: ["Строгая конфиденциальность", "Чёткие профессиональные границы"]
+    }];
+    return <section id="why-me" className="py-20 px-4 bg-background">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
@@ -199,8 +155,7 @@ const MainSections = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {reasons.map((reason, index) => (
-              <Card key={index} className="shadow-gentle hover:shadow-therapy transition-all duration-300 border-0">
+            {reasons.map((reason, index) => <Card key={index} className="shadow-gentle hover:shadow-therapy transition-all duration-300 border-0">
                 <CardContent className="p-8 text-center">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                     <reason.icon className="w-8 h-8 text-primary" />
@@ -211,67 +166,41 @@ const MainSections = () => {
                   </h3>
                   
                   <div className="space-y-3">
-                    {reason.points.map((point, pointIndex) => (
-                      <p key={pointIndex} className="text-muted-foreground leading-relaxed">
+                    {reason.points.map((point, pointIndex) => <p key={pointIndex} className="text-muted-foreground leading-relaxed">
                         {point}
-                      </p>
-                    ))}
+                      </p>)}
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
-      </section>
-    );
+      </section>;
   };
 
   // Professional Standards Section
   const ProfessionalStandards = () => {
-    const standards = [
-      {
-        icon: GraduationCap,
-        title: "Образование",
-        items: [
-          "Диплом переподготовки по психологии",
-          "Неполное высшее по клинической психологии (в процессе)"
-        ]
-      },
-      {
-        icon: Users,
-        title: "Супервизии",
-        items: [
-          "Регулярное обсуждение сложных случаев с экспертами",
-          "30+ часов супервизий"
-        ]
-      },
-      {
-        icon: Brain,
-        title: "Личная терапия",
-        items: [
-          "150+ часов собственной терапии",
-          "Чтобы оставаться для вас объективным специалистом"
-        ]
-      },
-      {
-        icon: Stethoscope,
-        title: "Методы",
-        items: [
-          "КПТ (когнитивно-поведенческая терапия)",
-          "Научно обоснованные инструменты работы с мыслями и поведением"
-        ]
-      },
-      {
-        icon: TrendingUp,
-        title: "Постоянное обучение и развитие",
-        items: [
-          "Постоянное обучение и развитие — мой ключевой принцип."
-        ]
-      }
-    ];
-
-    return (
-      <section className="py-20 px-4 bg-secondary/20">
+    const standards = [{
+      icon: GraduationCap,
+      title: "Образование",
+      items: ["Диплом переподготовки по психологии", "Неполное высшее по клинической психологии (в процессе)"]
+    }, {
+      icon: Users,
+      title: "Супервизии",
+      items: ["Регулярное обсуждение сложных случаев с экспертами", "30+ часов супервизий"]
+    }, {
+      icon: Brain,
+      title: "Личная терапия",
+      items: ["150+ часов собственной терапии", "Чтобы оставаться для вас объективным специалистом"]
+    }, {
+      icon: Stethoscope,
+      title: "Методы",
+      items: ["КПТ (когнитивно-поведенческая терапия)", "Научно обоснованные инструменты работы с мыслями и поведением"]
+    }, {
+      icon: TrendingUp,
+      title: "Постоянное обучение и развитие",
+      items: ["Постоянное обучение и развитие — мой ключевой принцип."]
+    }];
+    return <section className="py-20 px-4 bg-secondary/20">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center space-x-2 mb-4">
@@ -286,8 +215,7 @@ const MainSections = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {standards.map((standard, index) => (
-              <Card key={index} className="shadow-gentle hover:shadow-therapy transition-all duration-300 border-0">
+            {standards.map((standard, index) => <Card key={index} className="shadow-gentle hover:shadow-therapy transition-all duration-300 border-0">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-3 mb-4">
                     <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
@@ -301,48 +229,30 @@ const MainSections = () => {
                   </h3>
                   
                   <div className="space-y-2">
-                    {standard.items.map((item, itemIndex) => (
-                      <p key={itemIndex} className="text-sm text-muted-foreground leading-relaxed">
+                    {standard.items.map((item, itemIndex) => <p key={itemIndex} className="text-sm text-muted-foreground leading-relaxed">
                         {item}
-                      </p>
-                    ))}
+                      </p>)}
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
 
           <div className="mt-12 text-center">
             <p className="text-sm text-muted-foreground mb-4">
               Все сертификаты и дипломы доступны для ознакомления в разделе{" "}
-              <a 
-                href="#education" 
-                className="text-primary hover:text-primary/80 transition-colors duration-200 underline"
-              >
+              <a href="#education" className="text-primary hover:text-primary/80 transition-colors duration-200 underline">
                 "Образование"
               </a>
             </p>
           </div>
         </div>
-      </section>
-    );
+      </section>;
   };
 
   // Work With Section
   const WorkWithSection = () => {
-    const issues = [
-      "Поиск себя, своих целей и мотивации",
-      "Непринятие себя",
-      "Тревожное состояние, кризисные ситуации, панические атаки",
-      "Профессиональное выгорание",
-      "Сложности в отношениях",
-      "Чувство потери опоры, себя",
-      "Низкая самооценка",
-      "Чувство одиночества"
-    ];
-
-    return (
-      <section id="work-with" className="py-20 px-4 bg-background">
+    const issues = ["Поиск себя, своих целей и мотивации", "Непринятие себя", "Тревожное состояние, кризисные ситуации, панические атаки", "Профессиональное выгорание", "Сложности в отношениях", "Чувство потери опоры, себя", "Низкая самооценка", "Чувство одиночества"];
+    return <section id="work-with" className="py-20 px-4 bg-background">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
@@ -354,16 +264,14 @@ const MainSections = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {issues.map((issue, index) => (
-              <Card key={index} className="shadow-gentle hover:shadow-therapy transition-all duration-300 border-0">
+            {issues.map((issue, index) => <Card key={index} className="shadow-gentle hover:shadow-therapy transition-all duration-300 border-0">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4">
                     <div className="w-3 h-3 bg-primary rounded-full flex-shrink-0"></div>
                     <p className="text-lg text-foreground font-medium">{issue}</p>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
 
           <div className="text-center space-y-6">
@@ -372,34 +280,21 @@ const MainSections = () => {
               Напишите мне — обсудим ваш случай индивидуально.
             </p>
             
-            <a 
-              href="https://t.me/romabulochka"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block"
-            >
-              <Button 
-                variant="therapy"
-                size="lg"
-              >
+            <a href="https://t.me/romabulochka" target="_blank" rel="noopener noreferrer" className="inline-block">
+              <Button variant="therapy" size="lg">
                 Записаться на консультацию
               </Button>
             </a>
           </div>
         </div>
-      </section>
-    );
+      </section>;
   };
-
-  return (
-    <>
+  return <>
       <HeroSection />
       <ServicesSection />
       <WhyMeSection />
       <ProfessionalStandards />
       <WorkWithSection />
-    </>
-  );
+    </>;
 };
-
 export default MainSections;
