@@ -307,7 +307,13 @@ const MainSections = () => {
 
           <div className="mt-12 text-center">
             <p className="text-sm text-muted-foreground mb-4">
-              Все сертификаты и дипломы доступны для ознакомления в разделе "Образование"
+              Все сертификаты и дипломы доступны для ознакомления в разделе{" "}
+              <a 
+                href="#education" 
+                className="text-primary hover:text-primary/80 transition-colors duration-200 underline"
+              >
+                "Образование"
+              </a>
             </p>
           </div>
         </div>
