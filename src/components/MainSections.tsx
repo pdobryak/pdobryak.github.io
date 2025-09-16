@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, MessageCircle, Shield, Lock, CheckCircle, GraduationCap, Users, Brain, Stethoscope, TrendingUp } from "lucide-react";
-import psychologistPhoto from "@/assets/psychologist-photo-new.jpg";
+import psychologistPhoto from "@/assets/psychologist-photo-final.jpg";
 const MainSections = () => {
   // Hero Section
   const HeroSection = () => <section className="py-20 px-4 bg-gradient-warm">
