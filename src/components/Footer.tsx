@@ -13,11 +13,11 @@ const Footer = () => {
             </h3>
             <div className="space-y-3">
               <a 
-                href="mailto:lena.romakhina@gmail.com"
+                href="mailto:romabulochka@gmail.com"
                 className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="w-5 h-5" />
-                <span>lena.romakhina@gmail.com</span>
+                <span>romabulochka@gmail.com</span>
               </a>
               <a 
                 href="https://t.me/romabulochka" 
