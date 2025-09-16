@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, MessageCircle, Shield, Lock, CheckCircle, GraduationCap, Users, Brain, Stethoscope } from "lucide-react";
+import { Heart, MessageCircle, Shield, Lock, CheckCircle, GraduationCap, Users, Brain, Stethoscope, TrendingUp } from "lucide-react";
 import psychologistPhoto from "@/assets/psychologist-photo.jpg";
 
 const MainSections = () => {
@@ -40,7 +40,7 @@ const MainSections = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-foreground">Стабильно посещаю групповую супервизию</span>
+                <span className="text-foreground">Имею диплом психолога и сейчас получаю магистерскую степень по клинической психологии.</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-secondary rounded-full"></div>
@@ -88,7 +88,7 @@ const MainSections = () => {
         icon: MessageCircle,
         title: "Индивидуальная консультация",
         duration: "50-60 мин", 
-        price: "1500₽",
+        price: "2000₽",
         description: "Глубокая работа с вашим запросом, реальные инструменты",
         featured: false
       }
@@ -259,6 +259,14 @@ const MainSections = () => {
         items: [
           "ACT (терапия принятия и ответственности)",
           "КПТ (работа с мыслями и поведением)"
+        ]
+      },
+      {
+        icon: TrendingUp,
+        title: "Постоянное обучение и развитие",
+        items: [
+          "Постоянное обучение и развитие — мой ключевой принцип.",
+          "Чтобы глубже понимать запросы клиентов и оказывать квалифицированную поддержку."
         ]
       }
     ];
