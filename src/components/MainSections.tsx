@@ -28,11 +28,11 @@ const MainSections = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                <span className="text-foreground">Доказательные подходы: ACT и КПТ</span>
+                <span className="text-foreground">Работаю в научно доказанном подходе когнитивно-поведенческой терапии</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-foreground">Полная конфиденциальность</span>
+                <span className="text-foreground">Полная конфиденциальность и этика</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-secondary rounded-full"></div>
@@ -172,7 +172,7 @@ const MainSections = () => {
         icon: Shield,
         title: "Профессионально",
         points: [
-          "Работаю в доказательных подходах: ACT и КПТ",
+          "Работаю в научно доказанном подходе когнитивно-поведенческой терапии",
           "Фокус на ваших реальных изменениях"
         ]
       },
@@ -257,8 +257,8 @@ const MainSections = () => {
         icon: Stethoscope,
         title: "Методы",
         items: [
-          "ACT (терапия принятия и ответственности)",
-          "КПТ (работа с мыслями и поведением)"
+          "КПТ (когнитивно-поведенческая терапия)",
+          "Научно обоснованные инструменты работы с мыслями и поведением"
         ]
       },
       {
