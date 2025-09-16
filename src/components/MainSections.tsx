@@ -265,8 +265,7 @@ const MainSections = () => {
         icon: TrendingUp,
         title: "Постоянное обучение и развитие",
         items: [
-          "Постоянное обучение и развитие — мой ключевой принцип.",
-          "Чтобы глубже понимать запросы клиентов и оказывать квалифицированную поддержку."
+          "Постоянное обучение и развитие — мой ключевой принцип."
         ]
       }
     ];
@@ -286,7 +285,7 @@ const MainSections = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {standards.map((standard, index) => (
               <Card key={index} className="shadow-gentle hover:shadow-therapy transition-all duration-300 border-0">
                 <CardContent className="p-6">
