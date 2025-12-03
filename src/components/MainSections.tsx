@@ -20,29 +20,21 @@ const MainSections = () => {
             </div>
 
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-foreground">150+ часов личной терапии</span>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                <span className="text-foreground">Понимаю вас на личном опыте: 150+ часов моей терапии помогают быть более чуткой и эффективной в помощи вам.</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                <span className="text-foreground">Работаю в научно доказанном подходе когнитивно-поведенческой терапии</span>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                <span className="text-foreground">Работаю на результат: Использую научно-доказанные методы КПТ, которые дают конкретные инструменты для управления эмоциями.</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-foreground">Полная конфиденциальность и этика</span>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                <span className="text-foreground">Полная конфиденциальность: Ваши переживания останутся между нами. Строго соблюдаю профессиональную этику.</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                <span className="text-foreground">Занимаюсь психологией больше 3-х лет</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-primary rounded-full mx-0 my-0 py-0 px-[4px]"></div>
-                <span className="text-foreground">Имею диплом психолога и сейчас получаю магистерскую степень по клинической психологии.</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                <span className="text-foreground">Отношусь к делу с любовью и уважением</span>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                <span className="text-foreground">Постоянно расту как специалист: Дипломированный психолог, углубляю знания в магистратуре по клинической психологии, чтобы наша работа была еще качественнее.</span>
               </div>
             </div>
 
@@ -132,26 +124,23 @@ const MainSections = () => {
   const WhyMeSection = () => {
     const reasons = [{
       icon: Heart,
-      title: "Понимаю ваши сложности",
-      points: ["Была на вашем месте - знаю, как это волнительно", "150+ часов личной терапии - чтобы лучше помогать вам"]
+      title: "Глубокое понимание, а не просто диалог",
+      description: "Я знаю, каково это — сидеть «по ту сторону» и искать ответы. Мои 150+ часов личной терапии — это не просто цифра, а прожитый опыт, который помогает мне тоньше чувствовать ваши переживания и быть по-настоящему эмпатичным и бережным специалистом."
     }, {
       icon: Shield,
-      title: "Профессионально",
-      points: ["Работаю в научно доказанном подходе когнитивно-поведенческой терапии", "Фокус на ваших реальных изменениях"]
+      title: "Профессионализм, который дает реальные инструменты",
+      description: "Я не предлагаю «просто поговорить». Мы работаем в рамках когнитивно-поведенческой терапии (КПТ) — подхода, эффективность которого подтверждена наукой. Наша цель — не только исследовать чувства, но и дать вам практические стратегии для управления тревогой, мыслями и поведением, которые останутся с вами навсегда."
     }, {
       icon: Lock,
-      title: "Безопасно",
-      points: ["Строгая конфиденциальность", "Чёткие профессиональные границы"]
+      title: "Абсолютная безопасность и уважение к вашим границам",
+      description: "Конфиденциальность и четкие профессиональные рамки — это не просто правила, а основа доверия. Вы можете быть уверены, что любая ваша тема будет встречена с уважением и останется между нами. Здесь вы в безопасности."
     }];
     return <section id="why-me" className="py-20 px-4 bg-background">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-              Почему ко мне?
+              Мой подход к работе
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Три главные причины, почему клиенты выбирают работу со мной
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -165,11 +154,9 @@ const MainSections = () => {
                     {reason.title}
                   </h3>
                   
-                  <div className="space-y-3">
-                    {reason.points.map((point, pointIndex) => <p key={pointIndex} className="text-muted-foreground leading-relaxed">
-                        {point}
-                      </p>)}
-                  </div>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {reason.description}
+                  </p>
                 </CardContent>
               </Card>)}
           </div>
